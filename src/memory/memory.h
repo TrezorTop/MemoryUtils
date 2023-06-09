@@ -7,7 +7,7 @@
 
 class Memory {
 private:
-	// memory address
+	// process id in operating system 
 	DWORD processId = 0;
 
 	// pointer or a reference for manipulating an object in operating system
