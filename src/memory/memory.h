@@ -25,15 +25,15 @@ public:
 
 	// windows api function that reads specified memory address value
 	template<typename T>
-	T Read(uintptr_t address) {
-		T value;
+	constexpr const T Read(const uintptr_t& address) {
+		T value{};
 		ReadProcessMemory(this->process, (LPCVOID)address, &value, sizeof(T), NULL);
 		return value;
 	}
 
 	// windows api function that writes specified memory address value
 	template<typename T>
-	bool Write(uintptr_t address, T value) {
+	constexpr bool Write(const uintptr_t& address, const T& value) {
 		return WriteProcessMemory(this->process, (LPVOID)address, &value, sizeof(T), NULL);
 	}
 };
