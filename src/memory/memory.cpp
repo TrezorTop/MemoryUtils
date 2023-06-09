@@ -27,7 +27,7 @@ Memory::Memory(const char* processName) {
 		}
 	}
 
-	if (snapshot) CloseHandle(this->process);
+	if (snapshot) CloseHandle(snapshot);
 
 	if (!this->process) {
 		throw std::runtime_error("Failed to find the specified process");
